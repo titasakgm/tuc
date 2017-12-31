@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coagyear:</strong>
+  <%= @tucdoc.coagyear %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @tucdoc.project_id %>
+</p>
+
+<p>
+  <strong>Object class:</strong>
+  <%= @tucdoc.object_class_id %>
+</p>
+
+<p>
+  <strong>Item no:</strong>
+  <%= @tucdoc.item_no %>
+</p>
+
+<p>
+  <strong>Amend no:</strong>
+  <%= @tucdoc.amend_no %>
+</p>
+
+<%= link_to 'Edit', edit_tucdoc_path(@tucdoc) %> |
+<%= link_to 'Back', tucdocs_path %>

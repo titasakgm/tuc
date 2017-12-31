@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tucdocs
   get 'welcome/homepage'
 
   root 'welcome#homepage'

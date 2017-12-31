@@ -1,0 +1,47 @@
+<%= form_with(model: tucdoc, local: true) do |form| %>
+  <% if tucdoc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tucdoc.errors.count, "error") %> prohibited this tucdoc from being saved:</h2>
+
+      <ul>
+      <% tucdoc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coagyear %>
+    <%= form.text_field :coagyear, id: :tucdoc_coagyear %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id, id: :tucdoc_project_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :object_class_id %>
+    <%= form.text_field :object_class_id, id: :tucdoc_object_class_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :item_no %>
+    <%= form.text_field :item_no, id: :tucdoc_item_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amend_no %>
+    <%= form.text_field :amend_no, id: :tucdoc_amend_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Attached" %>
+    <%= form.file_field :doc %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

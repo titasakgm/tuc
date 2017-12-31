@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coagyear: MyString
+  project_id: MyString
+  object_class_id: MyString
+  item_no: MyString
+  amend_no: MyString
+
+two:
+  coagyear: MyString
+  project_id: MyString
+  object_class_id: MyString
+  item_no: MyString
+  amend_no: MyString

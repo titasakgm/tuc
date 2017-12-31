@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tucdocs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coagyear</th>
+      <th>Project</th>
+      <th>Object class</th>
+      <th>Item no</th>
+      <th>Amend no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tucdocs.each do |tucdoc| %>
+      <tr>
+        <td><%= tucdoc.coagyear %></td>
+        <td><%= tucdoc.project_id %></td>
+        <td><%= tucdoc.object_class_id %></td>
+        <td><%= tucdoc.item_no %></td>
+        <td><%= tucdoc.amend_no %></td>
+        <td><%= link_to 'Show', tucdoc %></td>
+        <td><%= link_to 'Edit', edit_tucdoc_path(tucdoc) %></td>
+        <td><%= link_to 'Destroy', tucdoc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tucdoc', new_tucdoc_path %>
