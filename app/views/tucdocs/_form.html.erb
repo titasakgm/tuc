@@ -1,47 +1,75 @@
-<%= form_with(model: tucdoc, local: true) do |form| %>
-  <% if tucdoc.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tucdoc.errors.count, "error") %> prohibited this tucdoc from being saved:</h2>
+<%= form_for @tucdoc, :html => { :class => "form-horizontal tucdoc" } do |f| %>
 
-      <ul>
-      <% tucdoc.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @tucdoc.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@tucdoc.errors.count, "error") %> prohibited this tucdoc from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @tucdoc.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :coagyear %>
-    <%= form.text_field :coagyear, id: :tucdoc_coagyear %>
+  <div class="form-group">
+    <%= f.label :coagyear, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :coagyear, :class => 'form-control' %>
+    </div>
+    <%# f.error_span(:coagyear) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :project_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :project_id, :class => 'form-control' %>
+    </div>
+    <%# f.error_span(:project_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :object_class_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :object_class_id, :class => 'form-control' %>
+    </div>
+    <%# f.error_span(:object_class_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :item_no, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :item_no, :class => 'form-control' %>
+    </div>
+    <%# f.error_span(:item_no) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amend_no, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :amend_no, :class => 'form-control' %>
+    </div>
+    <%# f.error_span(:amend_no) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :doc, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+
+      <% if f.object.doc.url %>
+        <%= image_tag f.object.doc.url, :style => 'height:300px;width:auto' %>
+        <p>Filename: <%= f.object.doc.file.filename %></p>
+      <% end %>
+
+       <%= f.file_field :doc, :class => 'form-control' %>
+    </div>
+    <%# f.error_span(:doc) %>
   </div>
 
-  <div class="field">
-    <%= form.label :project_id %>
-    <%= form.text_field :project_id, id: :tucdoc_project_id %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tucdocs_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :object_class_id %>
-    <%= form.text_field :object_class_id, id: :tucdoc_object_class_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_no %>
-    <%= form.text_field :item_no, id: :tucdoc_item_no %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amend_no %>
-    <%= form.text_field :amend_no, id: :tucdoc_amend_no %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Attached" %>
-    <%= form.file_field :doc %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

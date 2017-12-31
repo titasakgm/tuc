@@ -57,3 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rmagick'
 gem 'carrierwave'
 
+# Add bootstrap to make form more beautiful
+#### gem 'jquery-rails'
+#### gem 'twitter-bootstrap-rails'
+
+gem 'bootstrap-sass'
+
