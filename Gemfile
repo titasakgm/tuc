@@ -61,5 +61,6 @@ gem 'carrierwave'
 #### gem 'jquery-rails'
 #### gem 'twitter-bootstrap-rails'
 
+gem 'jquery-rails'
 gem 'bootstrap-sass'
 
