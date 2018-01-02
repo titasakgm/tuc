@@ -16,9 +16,14 @@
   <dd><%= @tucdoc.amend_no %></dd>
   <dt><strong><%= model_class.human_attribute_name(:doc) %>:</strong></dt>
   <% if @tucdoc.doc.url %>
-    <dt><%= image_tag @tucdoc.doc.url, :style => 'height:300px;width:auto' %></dt>
+    <% if @tucdoc.doc.file.file.downcase =~ /zip$/ %>
+      <dt><%= image_tag "/assets/icon_zip.jpg", :style => 'height:50px;width:auto' %>
+      <%= @tucdoc.doc %></dt>
+    <% else %>
+      <dt><%= image_tag @tucdoc.doc.url, :style => 'height:300px;width:auto' %></dt>
+      <dd><%= @tucdoc.doc %></dd>
+    <% end %>
   <% end %>
-  <dd><%= @tucdoc.doc %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

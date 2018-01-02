@@ -64,3 +64,13 @@ gem 'carrierwave'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 
+# Add mime-types gem in trying to solve ZIP icon not shown
+#### gem 'minie-types' => NOT SOLVED
+
+# Add zip gem to check if uploaded file is a valid zip
+gem 'zip'
+
+gem 'rb-readline'
+
+
+

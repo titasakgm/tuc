@@ -1,0 +1,2 @@
+class Tuczip < ApplicationRecord
+end

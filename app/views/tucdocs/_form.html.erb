@@ -55,7 +55,11 @@
     <div class="col-lg-10">
 
       <% if f.object.doc.url %>
-        <%= image_tag f.object.doc.url, :style => 'height:300px;width:auto' %>
+        <% if f.object.doc.file.file =~ /zip$/ %>
+            <%= image_tag '/assets/icon_zip.jpg', :style => 'height:50px;width:auto' %>
+        <% else %>
+            <%= image_tag f.object.doc.url, :style => 'height:300px;width:auto' %>
+        <% end %>
         <p>Filename: <%= f.object.doc.file.filename %></p>
       <% end %>
 

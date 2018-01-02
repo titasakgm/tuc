@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171231053900) do
+ActiveRecord::Schema.define(version: 20180102105618) do
 
   create_table "tucdocs", force: :cascade do |t|
     t.string "coagyear"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20171231053900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "doc"
+  end
+
+  create_table "tuczips", force: :cascade do |t|
+    t.string "filename"
+    t.string "mtime"
   end
 
 end
