@@ -18,6 +18,24 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
+.navbar .th-en-btn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+}
+@media (max-width: 767px) {
+  .navbar .th-en-btn {
+    right: 75px;
+  }
+}
+
+/* Add 1 20180103 */
+#th_en {
+    margin-top: 5px;
+    height: 28px;
+    width: auto;
+}
+
 /* Add 1 20171214 */
 .map {
     margin-top: 100px !important;
@@ -31,6 +49,7 @@ section {
 /* Add 3 20171214 for First Page */
 .mx-auto.tip1 {
     height: 300px;
+    width: 100%;
     padding-top: 100px;
 }
 
